@@ -13,9 +13,3 @@ jobs:
         with:
           build: yarn build-cypress
           start: yarn cypress
-
-      # - name: Start app and run Cypress tests
-      #   uses: cypress-io/github-action@v4
-      #   with:
-      #     start: yarn cypress
-      #     spec: cypress/e2e/home_page.cy.js
