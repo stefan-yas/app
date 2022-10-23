@@ -11,7 +11,8 @@ jobs:
       - name: Build and start app, run Cypress E2E tests
         uses: actions/checkout@v2
         with:
-          build: yarn install && yarn build:web && cd packages/web && yarn cypress
+          build: yarn install && yarn build:web && cd packages/web
+          start: yarn cypress
 
       # - name: Start app and run Cypress tests
       #   uses: cypress-io/github-action@v4
