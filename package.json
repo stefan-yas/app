@@ -40,9 +40,9 @@
     "postversion": "./scripts/push-tags-one-by-one.sh",
     "workspace:list": " yarn lerna list -all",
     "upgrade:snjs": "ncu -u '@standardnotes/*' && yarn workspaces foreach --verbose run upgrade:snjs",
-    "start-server": "yarn start",
+    "start-server": "cd packages/web && yarn start",
     "cy:run": "cypress run",
-    "cypress": "start-server-and-test 'yarn start-server' http://localhost:8080 cy:run",
+    "cypress": "start-server-and-test 'yarn start-server' http://localhost:3001 cy:run",
     "build-cypress": "yarn install && yarn build:web && cd packages/web"
   },
   "resolutions": {
