@@ -39,7 +39,11 @@
     "version": "yarn install --no-immutable && git add yarn.lock",
     "postversion": "./scripts/push-tags-one-by-one.sh",
     "workspace:list": " yarn lerna list -all",
-    "upgrade:snjs": "ncu -u '@standardnotes/*' && yarn workspaces foreach --verbose run upgrade:snjs"
+    "upgrade:snjs": "ncu -u '@standardnotes/*' && yarn workspaces foreach --verbose run upgrade:snjs",
+    "start-server": "cd packages/web && yarn start",
+    "cy:run": "cypress run",
+    "cypress": "start-server-and-test 'yarn start-server' http://localhost:3001 cy:run",
+    "build-cypress": "yarn install && yarn build:web && cd packages/web"
   },
   "resolutions": {
     "@types/styled-components/@types/react": "17.0.2",
@@ -49,7 +53,8 @@
     "@types/hoist-non-react-statics/@types/react": "17.0.2"
   },
   "dependencies": {
-    "@standardnotes/snjs": "workspace:*"
+    "@standardnotes/snjs": "workspace:*",
+    "start-server-and-test": "^1.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
@@ -64,6 +69,7 @@
     "@typescript-eslint/parser": "^5.20.0",
     "changelog-parser": "^2.8.1",
     "css-loader": "^6.7.1",
+    "cypress": "^10.10.0",
     "eslint": "^8.17.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.1",
