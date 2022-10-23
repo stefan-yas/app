@@ -16,7 +16,5 @@ jobs:
       - name: Start app and run Cypress tests
         uses: cypress-io/github-action@v4
         with:
-          start: cd packages/web && yarn start & wait-on http://localhost:3001
-          wait-on: 'http://localhost:3001'
-          wait-on-timeout: 60
+          start: yarn cypress
           spec: cypress/e2e/home_page.cy.js

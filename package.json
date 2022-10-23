@@ -39,7 +39,9 @@
     "version": "yarn install --no-immutable && git add yarn.lock",
     "postversion": "./scripts/push-tags-one-by-one.sh",
     "workspace:list": " yarn lerna list -all",
-    "upgrade:snjs": "ncu -u '@standardnotes/*' && yarn workspaces foreach --verbose run upgrade:snjs"
+    "upgrade:snjs": "ncu -u '@standardnotes/*' && yarn workspaces foreach --verbose run upgrade:snjs",
+    "cy:run": "cypress run",
+    "cypress": "start-server-and-test start http-get://localhost:3001 cy:run"
   },
   "resolutions": {
     "@types/styled-components/@types/react": "17.0.2",
