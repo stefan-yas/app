@@ -42,7 +42,8 @@
     "upgrade:snjs": "ncu -u '@standardnotes/*' && yarn workspaces foreach --verbose run upgrade:snjs",
     "start-server": "yarn start",
     "cy:run": "cypress run",
-    "cypress": "start-server-and-test 'yarn start-server' http://localhost:8080 cy:run"
+    "cypress": "start-server-and-test 'yarn start-server' http://localhost:8080 cy:run",
+    "build-cypress": "yarn install && yarn build:web && cd packages/web"
   },
   "resolutions": {
     "@types/styled-components/@types/react": "17.0.2",
