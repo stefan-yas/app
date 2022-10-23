@@ -11,12 +11,12 @@ jobs:
       - name: Build app
         uses: actions/checkout@v2
         with:
-          build: yarn install && yarn build:web && cd packages/web
+          build: yarn install && yarn build:web
 
       - name: Start app and run Cypress tests
         uses: cypress-io/github-action@v4
         with:
-          start: yarn start & wait-on http://localhost:3001
+          start: cd packages/web && yarn start & wait-on http://localhost:3001
           wait-on: 'http://localhost:3001'
           wait-on-timeout: 60
           spec: cypress/e2e/home_page.cy.js
