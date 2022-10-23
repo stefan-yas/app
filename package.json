@@ -40,8 +40,9 @@
     "postversion": "./scripts/push-tags-one-by-one.sh",
     "workspace:list": " yarn lerna list -all",
     "upgrade:snjs": "ncu -u '@standardnotes/*' && yarn workspaces foreach --verbose run upgrade:snjs",
+    "start-server": "yarn start",
     "cy:run": "cypress run",
-    "cypress": "start-server-and-test start http-get://localhost:3001 cy:run"
+    "cypress": "start-server-and-test 'yarn start-server' http://localhost:8080 cy:run"
   },
   "resolutions": {
     "@types/styled-components/@types/react": "17.0.2",
@@ -51,7 +52,8 @@
     "@types/hoist-non-react-statics/@types/react": "17.0.2"
   },
   "dependencies": {
-    "@standardnotes/snjs": "workspace:*"
+    "@standardnotes/snjs": "workspace:*",
+    "start-server-and-test": "^1.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
