@@ -36,3 +36,4 @@ packages/snjs/dist
 !.yarn/sdks
 !.yarn/versions
 !.yarn/cache
+.env.sample
